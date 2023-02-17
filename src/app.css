@@ -8,7 +8,6 @@ html { @apply bg-pink-100; }
     .debugBorder{ @apply border border-sky-500; }
     .link{ @apply transition-colors duration-100 ease-linear; }
     .link:hover{ @apply underline; }
-    main{ @apply absolute w-screen flex flex-col top-[5.25rem] text-center text-light-purple; }
-    main h1 { @apply text-5xl font-semibold font-mono; }
-    main h2 { @apply text-4xl font-medium font-mono; }
+    h1 { @apply text-5xl font-semibold font-mono; }
+    h2 { @apply text-4xl font-medium font-mono; }
 }
