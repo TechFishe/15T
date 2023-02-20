@@ -1,6 +1,7 @@
 <script>
     import EarthImg from '../../lib/img/earthNoBG.png';
     import HurImg from '../../lib/img/hurricaneNoBG.png';
+    
     import Main from '../../lib/containers/main.svelte';
     import AlbumBtn from '../../lib/btn/albumBtn.svelte';
     import TopSong from '../../lib/random/topSong.svelte';
