@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html { @apply bg-pink-100; }
+html { @apply bg-pink-100 selection:bg-lightest-pink; }
 
 @layer components{
     .debugBorder{ @apply border border-sky-500; }
@@ -10,4 +10,8 @@ html { @apply bg-pink-100; }
     .link:hover{ @apply underline; }
     h1 { @apply text-5xl font-semibold font-mono; }
     h2 { @apply text-4xl font-medium font-mono; }
+    ol { @apply list-decimal marker:text-mid-pink; }
+    .liked{ @apply fill-current stroke-none; }
+    .norm{ @apply fill-none stroke-current; }
+    .aniBase{ @apply transition-all duration-200 ease-in; }
 }

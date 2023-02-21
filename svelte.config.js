@@ -6,7 +6,13 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			'$lib': 'src/lib',
+			'$box': 'src/lib/containers',
+			'$audio': 'src/lib/audio',
+			'$img': 'src/lib/img'
+		}
 	}
 };
 

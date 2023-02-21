@@ -8,6 +8,9 @@ module.exports = {
         'mid-pink': '#e56b6f',
         'light-purple': '#6d6875'
       },
+      opacity: {
+        '15': 0.15
+      },
       keyframes: {
         'bounce-light': {
           '0%, 100%': { 

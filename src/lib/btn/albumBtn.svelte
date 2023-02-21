@@ -1,10 +1,8 @@
 <script lang="ts">
-    export let title:string = "no title :(";
+    export let title:string = "no title :(", URL:string = "none";
 </script>
 
-<section class="grid gird-rows-1 grid-flow-col gap-x-4 justify-start">
-    <div class="w-fit">
-        <slot />
-        <caption class="flex flex-row justify-center mt-1">{title}</caption>
-    </div>
+<section class="grid gird-rows-2 grid-cols-1 justify-start w-fit">
+    <a href="{URL}" class="rounded-md p-1 pl-2 shadow-md hover:rounded-xl hover:bg-light-purple/[0.15] hover:shadow-sm hover:scale-95 aniBase"><slot /></a>
+    <caption class="flex flex-row justify-center mt-2">{title}</caption>
 </section>
