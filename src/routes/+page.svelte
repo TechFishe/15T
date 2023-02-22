@@ -1,5 +1,5 @@
 <script>
-    import Main from "../lib/containers/main.svelte";
+    import Main from "$box/main.svelte";
 </script>
 
 <svelte:head>
