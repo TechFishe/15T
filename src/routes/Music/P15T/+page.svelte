@@ -1,7 +1,7 @@
 <script lang="ts">
     import Main from "$box/main.svelte";
     import EarthImg from '$img/earthNoBG.png';
-	import AlbumSong from "$lib/btn/songs/albumSong.svelte";
+	import AlbumSong from "$btn/songs/albumSong.svelte";
 
     let liked:boolean = false;
 </script>

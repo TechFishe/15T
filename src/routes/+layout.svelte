@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade, fly } from "svelte/transition";
     import "../app.css";
-    import MenuBtn from "../lib/btn/menuBtn.svelte";
+    import MenuBtn from "$btn/menuBtn.svelte";
 
     let menu1:boolean = true, menu2:boolean = false;
 
