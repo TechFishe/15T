@@ -1,8 +1,12 @@
 <script lang="ts">
     import Main from "$box/main.svelte";
     import EarthImg from '$img/earthNoBG.png';
+<<<<<<< HEAD
 	import AlbumSong from "$lib/btn/songs/albumSong.svelte";
     import { msg, songTitle, showAlert } from "../../../store";
+=======
+	import AlbumSong from "$btn/songs/albumSong.svelte";
+>>>>>>> 093d263deeffc2b390fe53c47c02adc98511ef90
 
     let liked:boolean = false;
 

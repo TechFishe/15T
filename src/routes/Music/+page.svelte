@@ -3,8 +3,8 @@
     import HurImg from '$img/hurricaneNoBG.png';
 
     import Main from '$box/main.svelte';
-    import AlbumBtn from '$lib/btn/albumBtn.svelte';
-    import TopSong from '$lib/btn/songs/topSong.svelte';
+    import AlbumBtn from '$btn/albumBtn.svelte';
+    import TopSong from '$btn/songs/topSong.svelte';
 </script>
 
 <svelte:head>
@@ -33,14 +33,16 @@
     <div class="grid grid-col-1 grid-rows-2 gap-y-8">
         <article class="mainSection"> 
             <h2>Albums</h2>
-            <AlbumBtn URL="/Music/P15T" title="Planet 15T">
-                <img src="{EarthImg}" alt="Planet 15T Album Cover" class="h-44 w-40" />
-            </AlbumBtn>
+            <section class="grid gird-rows-1 grid-flow-col gap-x-4 justify-start">
+                <AlbumBtn URL="/Music/P15T" title="Planet 15T">
+                    <img src="{EarthImg}" alt="Planet 15T Album Cover" class="h-44 w-40" />
+                </AlbumBtn>
+            </section>
         </article>
         <article class="mainSection">
             <h2>Singles &amp; EP&rsquo;s</h2>
             <section class="grid gird-rows-1 grid-flow-col gap-x-4 justify-start">
-                <AlbumBtn title="Hurricane">
+                <AlbumBtn URL="/Music/HPt2" title="Hurricane">
                     <img src="{HurImg}" alt="Hurricane Pic" class="h-44 w-40" />
                 </AlbumBtn>
             </section>
