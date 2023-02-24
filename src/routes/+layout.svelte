@@ -1,12 +1,8 @@
 <script lang="ts">
 	import { fade, fly } from "svelte/transition";
     import "../app.css";
-<<<<<<< HEAD
-    import MenuBtn from "../lib/btn/menuBtn.svelte";
-    import { customAlert, msg, showAlert, songTitle } from "../store";
-=======
     import MenuBtn from "$btn/menuBtn.svelte";
->>>>>>> 093d263deeffc2b390fe53c47c02adc98511ef90
+    import { customAlert, msg, showAlert, songTitle } from "../store";
 
     let menu1:boolean = true, menu2:boolean = false;
 
