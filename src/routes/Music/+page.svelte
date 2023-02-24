@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Main>
-    <header>
+    <header class="mt-12">
         <h1>Music</h1>
         <p>All of our band&rsquo;s music. All in one place</p>
     </header>

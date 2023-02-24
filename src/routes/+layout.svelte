@@ -2,6 +2,7 @@
 	import { fade, fly } from "svelte/transition";
     import "../app.css";
     import MenuBtn from "../lib/btn/menuBtn.svelte";
+    import { customAlert, msg, showAlert, songTitle } from "../store";
 
     let menu1:boolean = true, menu2:boolean = false;
 
@@ -66,6 +67,28 @@
         {/if}
     </nav>
 </header>
+<div class="text-center text-pink-100 text-lg font-medium">
+    {#if $showAlert}
+        <article class="inline-flex mt-20 shadow-md px-4 py-1.5 space-x-1 rounded-b-lg bg-lightest-pink" transition:fly|local={{y: -40, duration:500}}>
+            {#if $customAlert === false}
+                <span>
+                    {#if $msg === "playing"}
+                        Now playing:
+                        {:else if $msg === "liked"}
+                            You liked:
+                        {:else if $msg === "unliked"}
+                            You unliked:
+                        {:else if $msg === "albumliked"}
+                            You liked the album:
+                        {:else if $msg === "albumunliked"}
+                            You unliked the album:
+                    {/if}
+                </span>
+            {/if}
+            <p>{$songTitle}</p>
+        </article>
+    {/if}
+</div>
 <slot />
 
 <style>
