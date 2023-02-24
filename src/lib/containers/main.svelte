@@ -1,9 +1,13 @@
+<script lang="ts">
+    let liked:boolean = false, playing:boolean = false, isLooping:boolean = false;
+</script>
+
 <div class="absolute w-screen min-h-screen flex flex-col top-[5.25rem] text-center text-light-purple pb-[3.75rem]">
     <main>
         <slot />
     </main>
-    <section class="absolute bottom-5 w-screen border-t-[1px] border-light-purple text-light-purple">
-        <footer class="divide-x-[1px] divide-light-purple grid w-fit grid-flow-col grid-rows-1">
+    <section class="absolute bottom-5 w-screen">
+        <footer class="divide-x-[1px] border-t-[1px] border-light-purple text-light-purple w-screen divide-light-purple grid grid-flow-col grid-rows-1">
             <small>&copy; Jacob Barker 2023</small>
             <small>
                 Contact: 
