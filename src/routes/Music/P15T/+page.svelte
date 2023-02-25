@@ -3,6 +3,9 @@
     import EarthImg from '$img/earthNoBG.png';
 	import AlbumSong from "$btn/songs/albumSong.svelte";
     import { msg, songTitle, showAlert } from "../../../store";
+    import IT from '$audio/Planet-15T/IT.mp3';
+    import MPT from '$audio/Planet-15T/MPT.mp3';
+    import P15T from '$audio/Planet-15T/P15T.mp3';
 
     let liked:boolean = false;
 
@@ -41,8 +44,8 @@
         </div>
     </header>
     <ol class="w-[26rem] space-y-6 ml-10 mt-8">
-        <AlbumSong title="Island Time" />
-        <AlbumSong title="Midnight Palm Trees" />
-        <AlbumSong title="Planet 15T" />
+        <AlbumSong title="Island Time" song={IT} />
+        <AlbumSong title="Midnight Palm Trees" song={MPT} />
+        <AlbumSong title="Planet 15T" song={P15T} />
     </ol>
 </Main>

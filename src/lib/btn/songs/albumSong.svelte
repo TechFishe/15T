@@ -1,17 +1,21 @@
 <script lang="ts">
+	import { loop } from "svelte/internal";
     import { msg, showAlert, songTitle } from "../../../store";
 
-    export let title:string = "no title :(";
+    export let title:string = "no title :(", song:any;
 
-    let liked:boolean = false, playing:boolean = false, isLooping:boolean = false;
+    let liked:boolean = false, playing:boolean = false, isLooping:boolean = false, audio:any;
 
     function isPlaying(){
         if(playing){
             playing = false;
+            audio.pause();
             showAlert.set(false);
         } else {
             msg.set("playing")
             playing = true;
+            audio.currentTime = 0;
+            audio.play();
             songTitle.set(title);
             showAlert.set(true);
             setTimeout(() => {
@@ -39,6 +43,11 @@
             }, 3000);
         }
     }
+
+    function loops(){
+        isLooping = !isLooping;
+        audio.loop = isLooping;
+    }
 </script>
 
 <li>
@@ -54,7 +63,7 @@
                     {/if}
                 </svg>                  
             </button>
-            <button class:motion-safe:animate-[spin_2.5s_linear_infinite]="{isLooping}" class:motion-reduce:animate-[spin_5s_linear_infinite]="{isLooping}" class="hover:bg-light-purple/15 justify-self-end hover:scale-105 text-[#355070] rounded-full hover:shadow-md p-1 aniBase" on:click={() => isLooping = !isLooping}>
+            <button class:motion-safe:animate-[spin_2.5s_linear_infinite]="{isLooping}" class:motion-reduce:animate-[spin_5s_linear_infinite]="{isLooping}" class="hover:bg-light-purple/15 justify-self-end hover:scale-105 text-[#355070] rounded-full hover:shadow-md p-1 aniBase" on:click={() => loops()}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
                 </svg>                  
@@ -67,3 +76,5 @@
         </section>
     </div>
 </li>
+
+<audio src={song} bind:this={audio} />
