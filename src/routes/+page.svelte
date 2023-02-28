@@ -7,5 +7,5 @@
 </svelte:head>
 
 <Main>
-    <h1>Welcome</h1>
+    <h1 class="mt-12">Welcome</h1>
 </Main>

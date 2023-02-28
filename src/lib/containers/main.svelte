@@ -48,6 +48,6 @@
 
 <style>
     td {
-        @apply border-l-2 border-light-purple;
+        @apply border-l-2 border-light-purple/75;
     }
 </style>

@@ -4,7 +4,7 @@
 
     import Main from '$box/main.svelte';
     import AlbumBtn from '$btn/albumBtn.svelte';
-    import TopSong from '$btn/songs/topSong.svelte';
+    // import TopSong from '$btn/songs/topSong.svelte';
 </script>
 
 <svelte:head>
