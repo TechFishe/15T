@@ -3,8 +3,11 @@
     import "../app.css";
     import MenuBtn from "$btn/menuBtn.svelte";
     import { customAlert, msg, showAlert, songTitle } from "../store";
+    import { onMount } from "svelte";
 
-    let menu1:boolean = true, menu2:boolean = false;
+    let menu1:boolean = true, menu2:boolean = false, startUp:boolean = false;
+
+    onMount(() => startUp = true);
 
     function menuClick(){
         if(menu1){
@@ -23,31 +26,35 @@
 
 <header class:rounded-b-lg="{menu1}" class:rounded-bl-lg="{menu2}" class="bg-gradient-to-r z-50 from-lightest-pink to-mid-pink text-pink-100 h-20 items-center grid grid-row-1 grid-flow-col fixed w-screen subpixel-antialiased">
     <h1 class="text-6xl h-full w-fit font-mono flex space-x-4 font-bold">
-        <span class="self-center">Planet</span>
-        <span class="bg-light-purple rounded-b-lg px-2 shadow-2xl h-fit pb-2">15T</span>
+        {#if startUp}
+            <span class="self-center" in:fly|local={{x: -80, duration: 850}}>Planet</span>
+            <span class="bg-light-purple rounded-b-lg px-2 shadow-2xl h-fit pb-2" in:fly|local={{y: -80, duration: 850}}>15T</span>
+        {/if}
     </h1>
     <nav class="float-right h-full grid grid-rows-1 grid-flow-col justify-evenly items-center">
-        <a href="/" class="rounded-full p-1.5 w-fit hover:shadow-md aniBaseLocal">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-            </svg>
-        </a>
-        <button class="rounded-full p-1.5 w-fit motion-safe:animate-bounce-light motion-reduce:animate-none hover:animate-none hover:shadow-md aniBaseLocal" on:click={() => menuClick()}>
-            {#if menu1}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12" transition:fade|local={{duration: 300}}>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+        {#if startUp}
+            <a href="/" class="rounded-full p-1.5 w-fit hover:shadow-md aniBaseLocal" in:fly|local={{x: 100, duration: 500}}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
-            {/if}
-            {#if menu2}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12" transition:fade|local={{duration: 300}}>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
-                </svg>
-            {/if}
-        </button>
+            </a>
+            <button class="rounded-full p-1.5 w-fit motion-safe:animate-bounce-light motion-reduce:animate-none hover:animate-none hover:shadow-md aniBaseLocal" on:click={() => menuClick()} in:fly|local={{x: 100, duration: 750}}>
+                {#if menu1}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12" transition:fade|local={{duration: 300}}>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+                    </svg>
+                {/if}
+                {#if menu2}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12" transition:fade|local={{duration: 300}}>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+                    </svg>
+                {/if}
+            </button>
+        {/if}
         {#if menu2}
             <section class="h-fit w-[13.5rem] absolute bg-mid-pink rounded-bl-lg right-0 top-20" transition:fly={{ y: -80, duration: 500}}>
                 <h1 class="text-5xl text-center font-mono border-b-[0.25px] font-semibold border-pink-100/25">Menu</h1>
-                <ul class="px-2 py-2 space-y-2">
+                <ul class="px-2 py-2 space-y-2 list-none">
                     <li>
                         <MenuBtn title="About" URL="/About" SVG="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                     </li>

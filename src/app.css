@@ -11,6 +11,7 @@ html { @apply bg-pink-100 selection:bg-lightest-pink; }
     h1 { @apply text-5xl font-semibold font-mono; }
     h2 { @apply text-4xl font-medium font-mono; }
     ol { @apply list-decimal marker:text-mid-pink; }
+    ul{ @apply list-disc marker:text-mid-pink; }
     .liked{ @apply fill-current stroke-none; }
     .norm{ @apply fill-none stroke-current; }
     .aniBase{ @apply transition-all duration-200 ease-in; }
