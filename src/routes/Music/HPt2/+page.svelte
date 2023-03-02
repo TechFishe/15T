@@ -30,7 +30,7 @@
 
 <Main>
     <header class="grid grid-rows-2 grid-cols-12 px-4 pt-2">
-        <img src="{HurImg}" alt="Planet 15T Album Cover" class="row-span-2 col-span-2 shadow-md rounded-lg h-60 w-56" />
+        <img src="{HurImg}" alt="Hurricane Pt. 2 Album Cover" class="row-span-2 col-span-2 shadow-md rounded-lg h-60 w-56" />
         <h1 class="row-span-1 col-start-3 text-6xl font-bold pl-2 row-start-1 col-span-full text-left self-end border-b-[1px] border-light-purple/25">Hurricane Pt. 2</h1>
         <div class="text-left self-start row-span-1 row-start-2 col-start-3 col-span-full pl-2 space-y-1">
             <p>Release date: April 25th, 2023</p>
