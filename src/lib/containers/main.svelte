@@ -29,8 +29,9 @@
                     <td>
                         <small>
                             Software Used: 
-                            <a href="http://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="link hover:text-blue-500 decoration-blue-500">Tailwind CSS</a> 
-                            <a href="http://kit.svelte.dev" target="_blank" rel="noopener noreferrer" class="link hover:text-orange-500 decoration-orange-500">Sveltekit</a>
+                            <a href="http://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="link hover:text-blue-500 decoration-blue-500">Tailwind CSS</a>,
+                            <a href="http://kit.svelte.dev" target="_blank" rel="noopener noreferrer" class="link hover:text-orange-500 decoration-orange-500">Sveltekit</a>,
+                            <a href="http://soundtrap.com" target="_blank" rel="noopener noreferrer" class="link hover:text-violet-600 decoration-violet-600">Soundtrap</a>
                         </small>
                     </td>
                     <td>

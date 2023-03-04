@@ -42,8 +42,8 @@
         <article>
             <h2>Singles &amp; EP&rsquo;s</h2>
             <section>
-                <AlbumBtn URL="/Music/HPt2" title="Hurricane">
-                    <img src="{HurImg}" alt="Hurricane Pic" class="h-44 w-40" />
+                <AlbumBtn URL="/Music/HPt2" title="Hurricane Pt. 2">
+                    <img src="{HurImg}" alt="Hurricane Pt.2 Album Cover" class="h-44 w-40" />
                 </AlbumBtn>
             </section>
         </article>

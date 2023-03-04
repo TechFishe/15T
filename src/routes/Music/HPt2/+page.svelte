@@ -39,7 +39,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
-                    <span>Back</span>
+                    <span>Music</span>
                 </a>
                 <button class:liked="{liked}" class:norm="{!liked}" class="hover:bg-light-purple/10 h-fit hover:scale-105 text-mid-pink rounded-full p-1 transition-all duration-200 ease-in" on:click={() => heart()}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" class="w-8 h-8">
